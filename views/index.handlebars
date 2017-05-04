@@ -1,13 +1,13 @@
-<div class="container uneaten">
+
 <h1>BURGER TIME!</h1>
 
 <h2>EAT-DA-BURGER</h2>
-
+<div class="container uneaten">
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
   {{#unless this.devoured}}
       <li>{{this.burger_name}}
-        <form action="/{{this.id}}?_method=GET" method="POST">
+        <form action="/{{this.id}}?_method=PUT" method="POST">
         <input type="hidden" name="devoured" value="true">
           <button type="submit">DEVOUR IT!</button>
         </form>
@@ -19,7 +19,7 @@
 <div class="container eaten">
 DEVOURED!
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#if this.devoured}}
       <li>
         {{this.burger_name}}
@@ -30,7 +30,7 @@ DEVOURED!
 </div>
 
 
-
+<div class="container add-burger"
 <h2>Add a Burger</h2>
 <form class="create-update-form" action="/" method="POST">
 
@@ -40,3 +40,4 @@ DEVOURED!
   </div>
   <button type="submit">Add Burger</button>
 </form>
+</div>

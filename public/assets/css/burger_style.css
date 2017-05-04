@@ -1,3 +1,11 @@
 .eaten {
     float: right;
 }
+
+.uneaten {
+    float: left;
+}
+
+.add-burger {
+    clear: both ;
+}
