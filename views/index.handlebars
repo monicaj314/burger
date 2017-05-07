@@ -1,23 +1,44 @@
 
-<h1>BURGER TIME!</h1>
 
-<h2>EAT-DA-BURGER</h2>
-<div class="container uneaten">
+{{!--Herotron--}}
+<section class="hero is-black is-medium">
+    <div class="hero-body">
+    <div class="container">
+            
+  <img class="evil-burger is-overlay" src="../assets/images/burger_lord_by_hawanja.png">
+
+<p>
+    <h1 class="title">BURGER TIME!</h1>
+<h2 class="subtitle">EAT-DA-BURGER</h2>
+</p>
+</div>
+    </div>
+</section>
+{{!--Main content--}}
+
+<div class="container columns">
+
+    {{!--Undevoured burgers--}}
+<div class="container column is-half is-offset-2 uneaten">
+    <p class="title">UNDEVOURED BURGERS</p>
 <ul>
   {{#each burger}}
   {{#unless this.devoured}}
       <li>{{this.burger_name}}
         <form action="/{{this.id}}?_method=PUT" method="POST">
         <input type="hidden" name="devoured" value="true">
-          <button type="submit">DEVOUR IT!</button>
+          <button class="button is-warning devour-it">DEVOUR IT!</button>
+          <br>
         </form>
       </li>
       {{/unless}}
   {{/each}}
 </ul>
 </div>
-<div class="container eaten">
-DEVOURED!
+
+{{!--Devoured burgers--}}
+<div class="container column is-one-third eaten">
+<p class="title"> DEVOURED!</p>
 <ul>
   {{#each burger}}
     {{#if this.devoured}}
@@ -28,16 +49,33 @@ DEVOURED!
   {{/each}}
 </ul>
 </div>
+</div>
 
+{{!--To add burgers--}}
 
-<div class="container add-burger"
+<div class="container add-burger">
 <h2>Add a Burger</h2>
-<form class="create-update-form" action="/" method="POST">
-
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="name">
-  </div>
-  <button type="submit">Add Burger</button>
+<form class="create-update-form add-burger" action="/" method="POST">
+     <div class="field">
+         <p class="control">
+        <label>Burger Name:</label>
+        <input type="text" name="name">
+         </p>
+  <p class="control">
+      <label> Did you devour this beast?</label>
+    <label class="radio">
+      <input type="radio" name="devoured" value="TRUE">
+      Yes
+    </label>
+    <label class="radio">
+      <input class="create-update-form" type="radio" name="devoured" value="FALSE">
+      No
+    </label>
+  </p>
+</div>
+<button class="button is-black" type="submit">Add Burger</button>
+    </div>
+    
 </form>
+</div>
 </div>

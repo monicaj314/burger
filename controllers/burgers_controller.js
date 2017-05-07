@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
   burger.create([
-    "burger_name"
+    "burger_name, devoured"
   ], [
     req.body.name
   ], function() {
@@ -25,6 +25,7 @@ router.post("/", function(req, res) {
 
 router.put("/:id", function(req, res) {
   var eaten = "id = " + req.params.id;
+  var devoured = "devoured = " + req.params.devoured;
 
   console.log("devoured", eaten);
 

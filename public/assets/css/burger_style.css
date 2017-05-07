@@ -1,11 +1,33 @@
+.evil-burger {
+    top:-62px;
+
+}
+
 .eaten {
-    float: right;
-}
-
-.uneaten {
     float: left;
+    margin-right: auto;
 }
 
-.add-burger {
-    clear: both ;
+.eaten li {
+    text-decoration: line-through;
+}
+
+.add-burger p, .add-burger {
+    clear: both;
+    text-align: center;
+    font-family: 'Germania One', cursive;
+}
+
+li {
+    font-family: 'Germania One', cursive;
+    font-size: 1.5em;
+    text-align:center;
+}
+.devour-it, .title, .subtitle {
+    font-family: 'Creepster', cursive;
+}
+
+.title, .subtitle {
+    text-align:center;
+    text-decoration:none;
 }
