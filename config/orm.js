@@ -1,9 +1,7 @@
 var connection = require("../config/connection.js");
 
-
 function printQuestionMarks(num) {
   var arr = [];
-
   for (var i = 0; i < num; i++) {
     arr.push("?");
   }
@@ -20,7 +18,6 @@ function objToSql(ob) {
   }
   return arr.toString();
 }
-
 
 var orm = {
   all: function(table, cb) {
